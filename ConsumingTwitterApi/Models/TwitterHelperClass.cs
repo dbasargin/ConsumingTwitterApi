@@ -15,7 +15,7 @@ namespace ConsumingTwitterApi.Models
         {
             string access_token = "";
 
-            string credentials = "ZGVZSTBKTVBQSThjZmMzdFdPWUVaRm1JMjplb0loV1BRVlhFRUZNNm5HUTBKT2xFakFvNWNqSDd5NmVYU0pVNlU1VklNdzB5aGNTaQ==";
+            string credentials = creds.getCredentials();
 
             var post = WebRequest.Create("https://api.twitter.com/oauth2/token") as HttpWebRequest;
 

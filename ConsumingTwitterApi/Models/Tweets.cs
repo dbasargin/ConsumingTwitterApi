@@ -9,24 +9,61 @@ namespace ConsumingTwitterApi.Models
 {
     public class TwitterUser
     {
-        public string id { get; set; }
+        [JsonProperty("id")]
+        public Int64 id { get; set; }
+
+        [JsonProperty("id_str")]
         public string id_str { get; set; }
+
+        [JsonProperty("name")]
         public string name { get; set; }
+
+        [JsonProperty("screen_name")]
         public string screen_name { get; set; }
+
+        [JsonProperty("location")]
         public string location { get; set; }
+
+        [JsonProperty("url")]
         public string url { get; set; }
+
+        [JsonProperty("description")]
         public string description { get; set; }
-        public string verified { get; set; }
-        public string followers_count { get; set; }
-        public string friends_count { get; set; }
-        public string listed_count { get; set; }
-        public string favourites_count { get; set; }
-        public string statuses_count { get; set; }
+
+        [JsonProperty("verified")]
+        public bool verified { get; set; }
+
+        [JsonProperty("followers_count")]
+        public int followers_count { get; set; }
+
+        [JsonProperty("friends_count")]
+        public int friends_count { get; set; }
+
+        [JsonProperty("listed_count")]
+        public int listed_count { get; set; }
+
+        [JsonProperty("favourites_count")]
+        public int favourites_count { get; set; }
+
+        [JsonProperty("statuses_count")]
+        public int statuses_count { get; set; }
+
+        [JsonProperty("created_at")]
         public string created_at { get; set; }
-        public string utc_offset { get; set; }
+
+        [JsonProperty("utc_offset")]
+        public int utc_offset { get; set; }
+
+        [JsonProperty("time_zone")]
         public string time_zone { get; set; }
-        public string geo_enabled { get; set; }
+
+        [JsonProperty("geo_enabled")]
+        public bool geo_enabled { get; set; }
+
+        [JsonProperty("lang")]
         public string lang { get; set; }
+
+        [JsonProperty("profile_image_url_https ")]
         public string profile_image_url_https { get; set; }
 
 
@@ -67,8 +104,9 @@ namespace ConsumingTwitterApi.Models
 
         [JsonProperty("in_reply_to_screen_name")]
         public string in_reply_to_screen_name { get; set; }
-        
-        //public TwitterUser user { get; set; }
+
+        [JsonProperty("user")]
+        public TwitterUser user { get; set; }
 
         public override string ToString()
         {

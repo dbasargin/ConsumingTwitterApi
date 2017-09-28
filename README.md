@@ -16,8 +16,18 @@ TO DO ITEMS:
    using Json Deserialize feature to turn API Responses into custom 
    objects in my application.
    
-2) Display List of Tweets on UI.
+2) make UI more attractive
 
-3) consume and display other users tweets.
+3) To be determined: Figure out something useful or interesting to do with Tweets
 
-4) To be determined.
+
+Finished/LEARNED:
+
+- learning API by navigating through API data dictionary
+- OAuth (sending credentials to TwitterAPI and receiving Access_token)
+- sending web requests to API
+- consuming and converting API Responses to C# code 
+- Display list of Tweets on UI.
+- Creating a Twitter App
+- exposure to NewtontonSoft.Json library
+- Encoding.UTF8 with access keys from Twitter

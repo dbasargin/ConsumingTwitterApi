@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.subtitle{
+    font-size: 22px;
+    color: darkred;
+    font-weight: 300;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.tweetList{
+    background-color: aliceblue;
+    list-style-position: outside;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 10px 0px;
+    padding: 5px;
+    border: groove;
+    border-radius: 8px;
+}
+
+.tweetList .scrnName{
+    background-color: darkred;
+    color: white;
+    padding: inherit;
+    margin-right:0 15px;
+}

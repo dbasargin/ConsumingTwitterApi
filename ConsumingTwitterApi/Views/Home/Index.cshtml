@@ -1,12 +1,17 @@
-﻿@{
+﻿@model List<ConsumingTwitterApi.Models.Tweet>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>Practice consuming Twitters Api</h1>
+    <h1>Consuming Twitters Api</h1>
 
 </div>
 
-@foreach(var tweet in ViewBag.List){
-    <li> @tweet </li>
+<div class = "subtitle">These are the last @Model.Count() tweets from @Model[0].user.name; Todo: add Tweet Model</div>
+
+@foreach(var tweet in Model)
+{
+    <li class = "tweetList"> <span class = "scrnName"> @tweet.user.screen_name</span> @tweet.text.ToString() </li>
  }

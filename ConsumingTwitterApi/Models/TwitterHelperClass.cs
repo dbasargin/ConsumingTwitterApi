@@ -15,7 +15,7 @@ namespace ConsumingTwitterApi.Models
         {
             string access_token = "";
 
-            string credentials = creds.getCredentials();
+            string credentials = Creds.getCredentials();
 
             var post = WebRequest.Create("https://api.twitter.com/oauth2/token") as HttpWebRequest;
 
@@ -50,13 +50,20 @@ namespace ConsumingTwitterApi.Models
             return access_token;
         }
 
-        public static List<String> getTweet(string access_token) { 
-            var gettimeline = WebRequest.Create("https://api.twitter.com/1.1/statuses/user_timeline.json?count=3&screen_name=POTUS") as HttpWebRequest;
+        //This accepts a Twitter Access token, 
+        // retrieves 3 last Tweets from the POTUS Twitter Account Via Twitter API, 
+        // Formats these Tweets and returns them in a List<String>.
+        public static List<Tweet> getTweet(string access_token) {
+
+            //Create webrequest for Twitter API
+            var gettimeline = WebRequest.Create("https://api.twitter.com/1.1/statuses/user_timeline.json?count=3&screen_name=dennisbasargin") as HttpWebRequest;
             gettimeline.Method = "GET";
             gettimeline.Headers[HttpRequestHeader.Authorization] = "Bearer " + access_token;
 
-            List<String> dataIn = new List<String>();
+            //List<String> listOfTweetStrings = new List<String>(); //To do: make this Tweet objects, let view handle formatting
+            List<Tweet> listOfTweets = new List<Tweet>();
 
+            //send request
             try
             {
                 string respbody = null;
@@ -68,31 +75,24 @@ namespace ConsumingTwitterApi.Models
                     
                 }
 
-                //TODO use a library to parse json
-
-                //first Tweet pulling object data Dynamically: THIS IS WORKING
+                //parse json
                 dynamic dynTweet = JsonConvert.DeserializeObject(respbody);
 
-                foreach (var twit in dynTweet)
+                foreach (dynamic twit in dynTweet)
                 {
-                    dataIn.Add(twit.text.ToString());
+                    Tweet newTweetObj = new Tweet(twit);
+                    //listOfTweetStrings.Add(newTweetObj.user.ToString() + ": " + newTweetObj.ToString());
+                    listOfTweets.Add(newTweetObj);
                 }
-
-                //To Do: CONVERT TO TWITTER OBJECT
-                //List<Tweet> listOfTweets = JsonConvert.DeserializeObject<Tweet[]>(respbody).ToList();
-
-                //foreach(Tweet twit in listOfTweets) {
-
-                //    dataIn.Add(listOfTweets.ToString());
-                //}
 
             }
             catch //401 (access token invalid or expired)
             {
-                    //TODO
+                //listOfTweetStrings.Add("Error getting requested Tweet");
             }
 
-            return dataIn;
+            //return listOfTweetStrings;
+            return listOfTweets;
         }
 
     }

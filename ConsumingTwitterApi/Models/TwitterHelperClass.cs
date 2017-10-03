@@ -53,15 +53,16 @@ namespace ConsumingTwitterApi.Models
         //This accepts a Twitter Access token, 
         // retrieves 3 last Tweets from the POTUS Twitter Account Via Twitter API, 
         // Formats these Tweets and returns them in a List<String>.
-        public static List<Tweet> getTweet(string access_token) {
+        public static List<RetweetedStatus> getTweet(string access_token) {
+        
 
             //Create webrequest for Twitter API
-            var gettimeline = WebRequest.Create("https://api.twitter.com/1.1/statuses/user_timeline.json?count=3&screen_name=dennisbasargin") as HttpWebRequest;
+        var gettimeline = WebRequest.Create("https://api.twitter.com/1.1/statuses/user_timeline.json?count=3&screen_name=POTUS") as HttpWebRequest;
             gettimeline.Method = "GET";
             gettimeline.Headers[HttpRequestHeader.Authorization] = "Bearer " + access_token;
 
             //List<String> listOfTweetStrings = new List<String>(); //To do: make this Tweet objects, let view handle formatting
-            List<Tweet> listOfTweets = new List<Tweet>();
+            List<RetweetedStatus> listOfTweets = new List<RetweetedStatus>();
 
             //send request
             try
@@ -74,16 +75,16 @@ namespace ConsumingTwitterApi.Models
                     respbody = respR.ReadToEnd();
                     
                 }
-
+                listOfTweets = GettingStarted.FromJson(respbody);
                 //parse json
-                dynamic dynTweet = JsonConvert.DeserializeObject(respbody);
+                //dynamic dynTweet = JsonConvert.DeserializeObject(respbody);
 
-                foreach (dynamic twit in dynTweet)
-                {
-                    Tweet newTweetObj = new Tweet(twit);
-                    //listOfTweetStrings.Add(newTweetObj.user.ToString() + ": " + newTweetObj.ToString());
-                    listOfTweets.Add(newTweetObj);
-                }
+                //foreach (dynamic twit in dynTweet)
+                //{
+                //    RetweetedStatus newTweetObj = new RetweetedStatus(twit);
+                //    //listOfTweetStrings.Add(newTweetObj.user.ToString() + ": " + newTweetObj.ToString());
+                //    listOfTweets.Add(newTweetObj);
+                //}
 
             }
             catch //401 (access token invalid or expired)

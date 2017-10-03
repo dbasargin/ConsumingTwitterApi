@@ -1,4 +1,4 @@
-﻿@model List<ConsumingTwitterApi.Models.Tweet>
+﻿@model List<ConsumingTwitterApi.Models.RetweetedStatus>
 
 @{
     ViewBag.Title = "Home Page";
@@ -9,9 +9,9 @@
 
 </div>
 
-<div class = "subtitle">These are the last @Model.Count() tweets from @Model[0].user.name; Todo: add Tweet Model</div>
+<div class = "subtitle">These are the last <span style="font-weight:bold;" >@Model.Count()</span> tweets from <span style="font-weight:bold;" >@Model[0].User.Name</span> </div>
 
 @foreach(var tweet in Model)
 {
-    <li class = "tweetList"> <span class = "scrnName"> @tweet.user.screen_name</span> @tweet.text.ToString() </li>
+    <li style="list-style: none;" class = "tweetList"> <span style="font-weight:bold;"> @tweet.GetFormattedCreatedAt() </span> <span class = "scrnName"> @tweet.User.ScreenName </span> @tweet.Text </li>
  }

@@ -1,12 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:ghostwhite;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: white;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -30,7 +32,7 @@ textarea {
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-.tweetList{
+.body-content .tweetList{
     background-color: aliceblue;
     list-style-position: outside;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -38,11 +40,12 @@ textarea {
     padding: 5px;
     border: groove;
     border-radius: 8px;
+    list-style: none;
 }
 
-.tweetList .scrnName{
-    background-color: darkred;
-    color: white;
+li.tweetList span.scrnName{
+    color: indianred;
+    font-weight: bold;
     padding: inherit;
-    margin-right:0 15px;
+    border-radius: 8px;
 }

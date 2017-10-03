@@ -12,7 +12,7 @@ namespace ConsumingTwitterApi.Controllers
         public ActionResult Index()
         {
             string token = TwitterHelperClass.getTwitterAccess();
-            List<Tweet> tweetsList = TwitterHelperClass.getTweet(token);
+            List<RetweetedStatus> tweetsList = TwitterHelperClass.getTweet(token);
             
             return View(tweetsList);
         }

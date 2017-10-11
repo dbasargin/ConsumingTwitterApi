@@ -11,24 +11,46 @@ namespace ConsumingTwitterApi.Controllers
     {
         public ActionResult Index()
         {
-            string token = TwitterHelperClass.getTwitterAccessToken();
-            List<RetweetedStatus> tweetsList = TwitterHelperClass.getTweet(token);
-            
+            string token;
+
+            if (Session["TwitterToken"] == null)
+            {
+                try
+                {
+                    // create session
+                    Session["TwitterToken"] = TwitterHelperClass.getTwitterAccessToken();
+                    token = Session["TwitterToken"].ToString();
+                }
+                catch(Exception ex)
+                {
+                    return View("Error Getting Twitter Token: Of type:" + ex.GetType());
+                }
+            }
+            else
+            {
+                token = Session["TwitterToken"].ToString();
+            }
+
+            List<RetweetedStatus> tweetsList = TwitterHelperClass.getTweet(token, "POTUS");
+
             return View(tweetsList);
         }
 
-        public ActionResult About()
+        public ActionResult SearchByScreenName(string twitterScreenName)
         {
-            ViewBag.Message = "Your application description page.";
+            string token;
 
-            return View();
-        }
+            if (Session["TwitterToken"] == null)
+            {
+                // create session
+                Session["TwitterToken"] = TwitterHelperClass.getTwitterAccessToken();
+            }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            token = Session["TwitterToken"].ToString();
 
-            return View();
+            List<RetweetedStatus> tweetsList = TwitterHelperClass.getTweet(token, twitterScreenName);
+
+            return View("Index", tweetsList);
         }
     }
 }

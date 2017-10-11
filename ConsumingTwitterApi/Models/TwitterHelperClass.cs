@@ -43,9 +43,9 @@ namespace ConsumingTwitterApi.Models
                 //TODO use a library to parse json
                 access_token = respbody.Substring(respbody.IndexOf("access_token\":\"") + "access_token\":\"".Length, respbody.IndexOf("\"}") - (respbody.IndexOf("access_token\":\"") + "access_token\":\"".Length));
             }
-            catch //if credentials are not valid (403 error)
+            catch (Exception ex)
             {
-                //TODO
+                throw ex;
             }
             return access_token;
         }
@@ -84,6 +84,22 @@ namespace ConsumingTwitterApi.Models
 
             //return listOfTweetStrings;
             return listOfTweets;
+        }
+
+        public static bool IsTwitterTokenAvailable()
+        {
+            if (HttpContext.Current.Session["TwitterToken"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public static void AbandonSession()
+        {
+            HttpContext.Current.Session.Remove("TwitterToken");
         }
 
     }

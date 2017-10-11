@@ -3,15 +3,76 @@
 @{
     ViewBag.Title = "Home Page";
 }
+\
 
 <div class="jumbotron">
     <h1>Consuming Twitters Api</h1>
-
 </div>
 
-<div class = "subtitle">These are the last <span style="font-weight:bold;" >@Model.Count()</span> tweets from <span style="font-weight:bold;" >@Model[0].User.Name</span> </div>
 
-@foreach(var tweet in Model)
+@if (Model.Count > 0)
 {
-    <li style="list-style: none;" class = "tweetList"> <span style="font-weight:bold;"> @tweet.GetFormattedCreatedAt() </span> <span class = "scrnName"> @tweet.User.ScreenName </span> @tweet.Text </li>
- }
+    <div class = "subtitle">
+        These are the last
+        <span style="font-weight:bold;" > @Model.Count() </span>
+        tweets from
+        <span style="font-weight:bold;" >@Model[0].User.Name</span>
+
+    </div>
+
+    <a class="twitter-timeline" href="https://twitter.com/@Model[0].User.ScreenName">
+        Go to @Model[0].User.ScreenName Twitter
+    </a>
+
+    //Get All tweets
+    foreach (var tweet in Model)
+    {
+        <li style="list-style: none;" class = "tweetList">
+
+        <span style="font-weight:bold;"> @tweet.GetFormattedCreatedAt() </span>
+        <span class = "scrnName"> @tweet.User.ScreenName </span> @tweet.Text </li>
+
+        //get tweet media if provided
+        if (tweet.Entities != null && tweet.Entities.Media != null)
+        {
+            foreach (var media in tweet.Entities.Media)
+            {
+                <iframe title="YouTube video player" width="480" height="390" src= @media.MediaUrl frameborder="1" allowfullscreen>Whats going in here</iframe>
+            }
+        }
+    }
+
+}
+else
+{
+    <div class="scrnName">Could not find a PUBLIC twitter account with that name</div>
+}
+
+@using (Html.BeginForm("SearchByScreenName", "Home", FormMethod.Get))
+{
+    <p>
+        Find a public Twitter Account by Screen Name
+        @Html.TextBox("twitterScreenName")
+        <input type="submit" value="Search">
+    </p>
+}
+
+<div class = "scrnName">Examples of Public Screen Names: </div>
+
+<ul style="font-size:medium">
+    <li>
+        NASA
+    </li>
+
+    <li>
+        ABC_Publicity
+    </li>
+
+    <li>
+        BarackObama
+    </li>
+
+    <li>
+        ChipotleTweets
+    </li>
+</ul>

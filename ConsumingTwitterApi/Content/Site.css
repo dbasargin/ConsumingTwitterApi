@@ -43,9 +43,11 @@ textarea {
     list-style: none;
 }
 
-li.tweetList span.scrnName{
+li.tweetList span.scrnName, .body-content div.scrnName{
     color: indianred;
     font-weight: bold;
     padding: inherit;
     border-radius: 8px;
 }
+
+

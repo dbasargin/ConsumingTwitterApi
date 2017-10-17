@@ -50,4 +50,7 @@ li.tweetList span.scrnName, .body-content div.scrnName{
     border-radius: 8px;
 }
 
+#spinnyCube{
+    position: absolute;
+}
 

@@ -9,6 +9,7 @@ namespace ConsumingTwitterApi.Controllers
 {
     public class HomeController : Controller
     {
+        //loads Home page
         public ActionResult Index()
         {
             string token;
@@ -36,6 +37,7 @@ namespace ConsumingTwitterApi.Controllers
             return View(tweetsList);
         }
 
+        // updates homepage with search term
         public ActionResult SearchByScreenName(string twitterScreenName)
         {
             string token;
@@ -52,5 +54,7 @@ namespace ConsumingTwitterApi.Controllers
 
             return View("Index", tweetsList);
         }
+
+        
     }
 }

@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Home Page";
 }
-\
+
 
 <div class="jumbotron">
     <h1>Consuming Twitters Api</h1>
@@ -52,8 +52,8 @@ else
 {
     <p>
         Find a public Twitter Account by Screen Name
-        @Html.TextBox("twitterScreenName")
-        <input type="submit" value="Search">
+        @Html.TextBox("twitterScreenName", "" , new {onchange = "didUserAddSearchTerm()" })
+        <input id ="searchAcount" type="submit" value="Search">
     </p>
 }
 

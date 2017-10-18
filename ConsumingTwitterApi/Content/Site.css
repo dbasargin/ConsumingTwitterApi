@@ -50,7 +50,68 @@ li.tweetList span.scrnName, .body-content div.scrnName{
     border-radius: 8px;
 }
 
-#spinnyCube{
+body div.body-content #spinnyCube{
     position: absolute;
+    margin-top: -30px;
 }
 
+
+body div.body-content div.jumbotron #right-tron{
+    opacity: .85;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 188px;
+    margin-top: -140px;
+    margin-right: -60px;
+    float:right;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+
+    
+}
+
+ body div.body-content div.jumbotron div#time-box{
+     
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    padding: 0px 10px;
+    border-radius: 15px;
+    margin: 10px 20px;
+    opacity: .4;
+}
+
+#current-time{
+    background-color:black;
+    font-size: 22px;
+    color: white;
+    padding: 0px 25px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin: 0px -10px;
+    opacity: .6;
+}
+
+ body div.body-content div.jumbotron div#date-box{
+     
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    padding: 0px 10px;
+    border-radius: 15px;
+    margin: 0 20px;
+    opacity: .4;
+}
+
+#current-date{
+    background-color:black;
+    font-size: 22px;
+    color: white;
+    padding: 0px 25px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin: 0px -10px;
+    opacity: .6;
+}

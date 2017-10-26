@@ -101,6 +101,6 @@ namespace ConsumingTwitterApi.Models
         {
             HttpContext.Current.Session.Remove("TwitterToken");
         }
-
+        
     }
 }

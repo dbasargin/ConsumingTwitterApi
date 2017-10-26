@@ -133,10 +133,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\mushroom.jpg" />
+    <Content Include="Content\Images\PNW.png" />
+    <Content Include="Content\Images\QueenCrown.jpg" />
+    <Content Include="Content\Images\RoundBorder.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Images\victorianBorder.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="..\.gitignore">

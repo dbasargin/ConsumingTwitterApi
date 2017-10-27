@@ -176,3 +176,7 @@ body #spinnyCube {
     /* -----------     END: date and clock   ----------- */
 }
 
+#hplus-map{
+    width: 100%;
+    height: 400px;
+}

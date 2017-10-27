@@ -9,6 +9,8 @@
     @Scripts.Render("~/bundles/customScript")  @*this is my custom bundle: lets see how it works out*@
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/three.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3V0OUfgG_UF2v-alZUVYABKX8PNLGk5A&callback=initMap"
+            async defer></script>
 </head>
 <body>
 
@@ -32,6 +34,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Google Api", "Index", "Google")</li>
                 </ul>
             </div>
 

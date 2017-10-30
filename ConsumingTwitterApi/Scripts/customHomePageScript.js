@@ -1,7 +1,9 @@
 ﻿// This is my custom script for the homepage
-// BE FORWARNED: I am an absolutely new to Javascript so these
-// are my first attempts
+// I am learning Javascript from Lynda.com
+// I am applying what I am learning to this project. 
 
+
+//if search textbox is empty, disable display button
 document.addEventListener('DOMContentLoaded', function () {
 
     var searchState = document.getElementById('twitterScreenName');
@@ -29,7 +31,7 @@ function didUserAddSearchTerm() {
     }
 };
 
-
+//displays the time on homepage
 document.addEventListener('DOMContentLoaded', function () {
     var c = document.getElementById('current-time');
     
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+//displays date on homepage
 document.addEventListener('DOMContentLoaded', function () {
     var date = document.getElementById('current-date');
     var d = new Date();

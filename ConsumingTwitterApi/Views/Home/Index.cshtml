@@ -55,12 +55,13 @@ else
     <div class="scrnName">Could not find a PUBLIC twitter account with that name</div>
 }
 
-@using (Html.BeginForm("SearchByScreenName", "Home", FormMethod.Get))
+@using (Html.BeginForm("SearchByScreenName", "Home", FormMethod.Get, new {id = "search-form" }))
 {
     <p>
         Find a public Twitter Account by Screen Name
-        @Html.TextBox("twitterScreenName", "" , new {onchange = "didUserAddSearchTerm()" })
+        @Html.TextBox("twitterScreenName", "" , new {id = "txtBxSName" })
         <input id ="searchAcount" type="submit" value="Search">
+        <span id="error-message"></span>
     </p>
 }
 

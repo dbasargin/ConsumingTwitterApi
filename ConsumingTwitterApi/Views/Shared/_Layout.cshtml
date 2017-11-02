@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/customScript")  @*this is my custom bundle: lets see how it works out*@
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/three.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3V0OUfgG_UF2v-alZUVYABKX8PNLGk5A&callback=initMap"
@@ -15,7 +14,7 @@
 <body>
 
    
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         
         
         <div class="container">
@@ -38,19 +37,16 @@
                 </ul>
             </div>
 
-            <div class="now">
+            
                 <div id="date-box" class="now">
                     DATE
                     <div id="current-date"></div>
                 </div>
-            </div>
 
-            <div class="now">
                 <div id="time-box" class="now">
                     TIME
                     <div id="current-time"></div>
                 </div>
-            </div>
 
         </div>
     </div>
@@ -64,6 +60,7 @@
                 </footer>
             </div>
 
+            @Scripts.Render("~/bundles/customScript")  @*this is my custom bundle: lets see how it works out*@
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")
             @RenderSection("scripts", required: false)

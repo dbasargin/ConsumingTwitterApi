@@ -3,33 +3,20 @@
 // I am applying what I am learning to this project. 
 
 
-//if search textbox is empty, disable display button
-document.addEventListener('DOMContentLoaded', function () {
-
-    var searchState = document.getElementById('twitterScreenName');
-    var btnState = document.getElementById('searchAcount');
-
-    if (searchState.value === '') {
-        btnState.disabled = true;
-    }
-    else {
-        btnState.disabled = false;
-    }
-});
-
-function didUserAddSearchTerm() {
-    var searchState = document.getElementById('twitterScreenName');
-    var btnState = document.getElementById('searchAcount');
-
-    if (searchState.value == '') {
-        btnState.disabled = true;
-        alert("Enter a screen name to search for tweets");
-        searchState.focus();
-    }
-    else {
-        btnState.disabled = false;
-    }
-};
+function prepareEventHandlers() {
+    document.getElementById("search-form").onsubmit = function () {
+        if (document.getElementById("txtBxSName").value == "") {
+            document.getElementById("error-message").innerHTML = "Please enter a twitter screen name";
+            return false;
+        }else{
+            document.getElementById("error-message").innerHTML = "";
+            return true;
+        }
+    };
+}
+window.onload = function () {
+    prepareEventHandlers();
+}
 
 //displays the time on homepage
 document.addEventListener('DOMContentLoaded', function () {

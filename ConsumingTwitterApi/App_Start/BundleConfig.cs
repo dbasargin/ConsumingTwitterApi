@@ -14,6 +14,7 @@ namespace ConsumingTwitterApi
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            //adds custom javascript files to application
             bundles.Add(new ScriptBundle("~/bundles/customScript").Include(
                         "~/Scripts/customHomePageScript.js",
                         "~/Scripts/GoogleApiScript.js"));

@@ -757,7 +757,7 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
+  padding-right: 0px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
@@ -4386,6 +4386,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
+  padding: 25px 0px 15px 0px;
 }
 
 .navbar-default .navbar-brand {

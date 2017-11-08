@@ -1,19 +1,15 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
     background-color:#f8f8f8;
-    
-    
-
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-
     border: 30px solid transparent;
     border-image: url('Images/PNW.png')  0 18 round ;
     border-image-repeat:repeat;
     padding: 0px 15px;
+    margin-top: 40px;
     background-color: white;
     border-top:inset; 
 }
@@ -38,10 +34,20 @@ textarea {
 }
 
 .subtitle{
-    font-size: 22px;
+    font-size: 30px;
     color: darkred;
     font-weight: 300;
     font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.bars {
+    margin: 10px;
+    border-style: solid;
+    background-color: aliceblue;
+    border-color: cadetblue;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 22px;
 }
 
 /*styling for list of tweets on homepage*/

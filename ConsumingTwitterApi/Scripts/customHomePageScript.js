@@ -2,7 +2,7 @@
 // I am learning Javascript from Lynda.com
 // I am applying what I am learning to this project. 
 
-
+//client side validation for TwitterScreenName search box on the homepage
 function prepareEventHandlers() {
     document.getElementById("search-form").onsubmit = function () {
         if (document.getElementById("txtBxSName").value == "") {

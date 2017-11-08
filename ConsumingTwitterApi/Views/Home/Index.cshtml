@@ -16,7 +16,7 @@
     </div>
 </div>
 
-
+@* as long as the model is not empty display Tweet data else display message *@
 @if (Model.Count > 0)
 {
     <div class = "subtitle">
@@ -55,6 +55,7 @@ else
     <div class="scrnName">Could not find a PUBLIC twitter account with that name</div>
 }
 
+@* Form allows user to enter a public screen name and calls controller to look for accouts Tweets *@
 @using (Html.BeginForm("SearchByScreenName", "Home", FormMethod.Get, new {id = "search-form" }))
 {
     <p>

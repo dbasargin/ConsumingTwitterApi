@@ -22,17 +22,19 @@ Google Maps API:
             
             Details:
             Added a new page to the application which displays a Google map to the UI.
-            The map initially focuses on the South Puget Sound with scrolling and zooming enabled.
-            I also added markers and info windows to Tacoma and Seattle to practice interacting with
-            this Api.
+            The map initially focuses on Seattle scrolling and zooming enabled.
+            I added markers different locations in Seattle. To demonstrate my ability to interact with 
+            this API I added links outside of the Map that will open the Markers infoWindows when
+            clicked.
 
 
 TO DO ITEMS:
+- At this time This project has fullfilled its purpose, may refactor and improve code as I continue developing my Javascript skills.
+- Also, may add another page to practicing consuming a new API
 
-1) improve UI by adding Javascript features to GoogleAPI Page
-2) think of a fun UI interaction feature for this API(maybe a search feature)
 
 Finished/Learned items
+- learned how to interact with google maps api in real world example(links outside of map will display info inside map)
 - added multiple scripts to ScriptBundles- made available to web pages
 - Learned and added Google Maps Api in Javascript
 - added a clock and date to navigation bar using Javascript for UI purposes: in effort to learn Javascript
